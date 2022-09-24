@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+  <script>
+    "use strict";
+    /**
+    * Функция возвращает сумму параметров x и y
+    * @param {number} x
+    * @param {number} y
+    * @retuns {number}
+    */
+    function my_sum(x, y) {
+      return (x + y);
+    };
+
+    /**
+     * Функция возвращает разницу параметров x и y, вычитая из большего меньший
+     * @param {number} x
+     * @param {number} y
+     * @retuns {number}
+     */
+    function my_sub(x, y) {
+      if (x > y) {
+        return (x - y);
+      }
+      else {
+        return (y - x);
+      };
+    };
+
+    /**
+    * Функция возвращает произведение параметров x и y
+    * @param {number} x
+    * @param {number} y
+    * @retuns {number}
+    */
+    function my_mul(x, y) {
+      return (x * y);
+    };
+
+    /**
+    * Функция возвращает результат деления параметра x на параметр y
+    * @param {number} x
+    * @param {number} y
+    * @retuns {number}
+    */
+    function my_div(x, y) {
+      return (x / y);
+    };
+
+    /**
+     * Функция  должна вернуть результат операции, который был передан в параметр operation для двух первых аргументов (arg1 и arg2)
+     * @param {number} arg1 - первое число.
+     * @param {number} arg2 - второе число.
+     * @param {string} operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+     * @return {number} - соответствующий результат операции, или {NaN} в случае ввода некорректной операции.
+     */
+
+    function mathOperation(arg1, arg2, operation) {
+      switch (operation) {
+        case '+':
+          return (my_sum(arg1, arg2));
+        case '-':
+          return (my_sub(arg1, arg2));
+        case '*':
+          return (my_mul(arg1, arg2));
+        case '/':
+          return (my_div(arg1, arg2));
+        default:
+          return NaN;
+      };
+    };
+    // проверка
+    console.log(mathOperation(5, 3, "+"));
+    console.log(mathOperation(5, 3, ":)"));
+    console.log(mathOperation(5, 3, "-"));
+    console.log(mathOperation(5, 3, "*"));
+    console.log(mathOperation(5, 3, "/"));
+
+
+
+  </script>
+
+</body>
+
+</html>
